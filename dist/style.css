@@ -146,7 +146,19 @@ button{font:inherit}
 }
 
 @media (max-width:680px){
-  .visual-bottom strong{font-size:13px}
+  .hero-grid{gap:22px}
+  .hero-visual{width:calc(100% + 28px);height:400px;margin-left:-14px}
+  .hero-card{inset:10px 0 38px;border-radius:26px}
+  .hero-photo{object-position:center 54%}
+  .tech-badge{top:16px;left:16px;padding:8px 11px;font-size:9px;letter-spacing:.11em}
+  .visual-bottom{left:18px;right:18px;bottom:18px}
+  .visual-bottom span{display:none}
+  .visual-bottom strong{font-size:15px;margin-top:0}
+  .float-card{top:auto!important;bottom:0!important;padding:10px 11px;font-size:9px;border-radius:12px;animation:none;white-space:nowrap}
+  .float-card b{margin-left:5px}
+  .fc-1{left:8px;right:auto}
+  .fc-2{left:50%;right:auto;transform:translateX(-50%)}
+  .fc-3{left:auto;right:8px}
   .footer{padding-top:44px}
   .footer-heading-row{align-items:flex-start;flex-direction:column;gap:16px}
   .footer-heading-row h2{font-size:44px}
