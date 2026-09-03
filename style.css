@@ -98,7 +98,11 @@ button{font:inherit}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1)}.reveal.in-view{opacity:1;transform:none}.delay-1{transition-delay:.12s}.delay-2{transition-delay:.24s}.delay-3{transition-delay:.36s}
 
 /* Photography-led refresh */
-.hero-card{border:1px solid rgba(255,255,255,.16);background:#111;box-shadow:0 40px 100px rgba(0,0,0,.5)}
+.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(400px,.95fr);gap:55px}
+.hero-copy,.hero-visual{min-width:0}
+.hero h1{font-size:clamp(42px,4.2vw,60px)}
+.hero-visual{height:auto;aspect-ratio:1.22/1}
+.hero-card{inset:0;border:1px solid rgba(255,255,255,.16);border-radius:26px;background:#111;box-shadow:0 40px 100px rgba(0,0,0,.5)}
 .hero-card::before{z-index:2;background:linear-gradient(150deg,rgba(237,22,27,.14),transparent 45%);pointer-events:none}
 .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.75) contrast(1.06)}
 .hero-photo-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.08) 25%,rgba(0,0,0,.84) 100%)}
@@ -147,8 +151,8 @@ button{font:inherit}
 
 @media (max-width:680px){
   .hero-grid{gap:22px}
-  .hero-visual{width:calc(100% + 28px);height:400px;margin-left:-14px}
-  .hero-card{inset:10px 0 38px;border-radius:26px}
+  .hero-visual{width:calc(100% + 28px);height:320px;margin-left:-14px;aspect-ratio:auto}
+  .hero-card{inset:0 0 36px;border-radius:22px}
   .hero-photo{object-position:center 54%}
   .tech-badge{top:16px;left:16px;padding:8px 11px;font-size:9px;letter-spacing:.11em}
   .visual-bottom{left:18px;right:18px;bottom:18px}
