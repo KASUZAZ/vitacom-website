@@ -21,7 +21,7 @@ document.body.innerHTML = `
       <a class="brand" href="index.html#home"><img src="assets/vitacom-logo.png" alt="Vitacom Enterprise logo"><span class="brand-name">Vitacom Enterprise</span></a>
       <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="nav" id="navMenu"><a href="index.html#home">Home</a><a href="index.html#about">About</a><a href="products.html">Products</a><a class="active" href="services.html">Service & Troubleshooting</a><a href="index.html#why">Why Vitacom</a><a href="index.html#contact">Contact</a></nav>
-      <a class="nav-cta desktop-only" href="https://api.whatsapp.com/send?phone=%2B60125208554" target="_blank" rel="noopener">Book Service</a>
+      <a class="nav-cta desktop-only" href="https://api.whatsapp.com/send?phone=%2B60128646878" target="_blank" rel="noopener">Book Service</a>
     </div>
   </header>
   <main>
@@ -31,7 +31,7 @@ document.body.innerHTML = `
           <span class="eyebrow"><i></i> SERVICE & TROUBLESHOOTING</span>
           <h1>Hardware Or Software.<br><span>We’ll Help Diagnose It.</span></h1>
           <p>Vitacom menyediakan pemeriksaan, troubleshooting, pembaikan dan sokongan untuk laptop, desktop, printer, rangkaian serta masalah software dan hardware.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=%2B60125208554" target="_blank" rel="noopener">Ask for Diagnosis ↗</a><a class="btn btn-ghost" href="#service-list">View Services</a></div>
+          <div class="hero-actions"><a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=%2B60128646878" target="_blank" rel="noopener">Ask for Diagnosis ↗</a><a class="btn btn-ghost" href="#service-list">View Services</a></div>
         </div>
         <div class="service-hero-photo"><img src="assets/why-reliability.jpg" alt="Technician diagnosing and repairing computer hardware"><span>DIAGNOSE · REPAIR · SUPPORT</span></div>
       </div>
@@ -50,7 +50,7 @@ document.body.innerHTML = `
           <article><b>02</b><h2>Diagnosis</h2><p>Vitacom akan periksa punca masalah dan cadangkan tindakan yang sesuai.</p></article>
           <article><b>03</b><h2>Repair & Test</h2><p>Pembaikan dibuat selepas persetujuan, kemudian peranti diuji sebelum diserahkan.</p></article>
         </div>
-        <div class="service-cta"><div><span>Need technical help?</span><h2>Contact Vitacom for a service check.</h2></div><a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=%2B60125208554" target="_blank" rel="noopener">WhatsApp 012-520 8554 ↗</a></div>
+        <div class="service-cta"><div><span>Need technical help?</span><h2>Contact Vitacom for a service check.</h2></div><a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=%2B60128646878" target="_blank" rel="noopener">WhatsApp +60 12-864 6878 ↗</a></div>
       </div>
     </section>
   </main>
@@ -58,7 +58,7 @@ document.body.innerHTML = `
     <div class="container footer-statement"><div class="footer-mark"><img src="assets/vitacom-logo.png" alt=""><strong>VITACOM ENTERPRISE</strong></div><p>Hardware and software troubleshooting for homes and businesses in Melaka.</p></div>
     <div class="container footer-bottom"><span>© 2026 VITACOM ENTERPRISE · MERLIMAU, MELAKA</span></div>
   </footer>
-  <button class="floating-whatsapp" aria-label="WhatsApp Vitacom" onclick="window.open('https://api.whatsapp.com/send?phone=%2B60125208554','_blank')"><span>WA</span><i>Chat with us</i></button>`;
+  <button class="floating-whatsapp" aria-label="WhatsApp Vitacom" onclick="window.open('https://api.whatsapp.com/send?phone=%2B60128646878','_blank')"><span>WA</span><i>Chat with us</i></button>`;
 
 const menuBtn = document.getElementById('menuBtn');
 const navMenu = document.getElementById('navMenu');

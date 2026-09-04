@@ -30,7 +30,7 @@ Included animations:
 External links included:
 - Shopee getnew.my
 - Vitacom Melaka Facebook
-- WhatsApp 012-520 8554
+- WhatsApp +60 12-864 6878
 
 Photo assets:
 - hero-computer-store.jpg — Czapp Árpád / Pexels
