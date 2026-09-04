@@ -2,8 +2,12 @@ VITACOM ENTERPRISE WEBSITE
 
 Files:
 - index.html
+- products.html
+- services.html
 - style.css
 - script.js
+- catalog.js
+- services.js
 - assets/vitacom-logo.png
 
 How to run:
@@ -37,3 +41,4 @@ Photo assets:
 - why-quality.jpg — Bulat Khamitov / Pexels (photo 35290693)
 - why-reliability.jpg — Bulat Khamitov / Pexels (photo 33531806)
 - why-innovation.jpg — Nic Wood / Pexels (photo 6432056)
+- shopee-vitacom-products.png — user-provided Vitacom Shopee storefront reference

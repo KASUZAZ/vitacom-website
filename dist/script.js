@@ -14,7 +14,10 @@ window.addEventListener('scroll', () => {
   document.querySelectorAll('main section[id]').forEach(section => {
     if (scrollY >= section.offsetTop - 180) current = section.id;
   });
-  navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${current}`));
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href?.startsWith('#')) link.classList.toggle('active', href === `#${current}`);
+  });
 });
 
 menuBtn?.addEventListener('click', () => {

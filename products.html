@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Katalog produk Vitacom Enterprise — printer, dakwat, komputer, aksesori dan peralatan rangkaian." />
+  <title>Product Portal | Vitacom Enterprise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="inner-page">
+  <div class="page-progress" id="pageProgress"></div>
+  <div class="noise"></div>
+
+  <header class="site-header scrolled" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html#home" aria-label="Vitacom Enterprise home">
+        <img src="assets/vitacom-logo.png" alt="Vitacom Enterprise logo" />
+        <span class="brand-name">Vitacom Enterprise</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav" id="navMenu">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a class="active" href="products.html">Products</a>
+        <a href="services.html">Service & Troubleshooting</a>
+        <a href="index.html#why">Why Vitacom</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="nav-cta desktop-only" href="services.html">Get Support</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="catalog-hero">
+      <div class="container catalog-hero-grid">
+        <div>
+          <span class="eyebrow"><i></i> VITACOM PRODUCT PORTAL</span>
+          <h1>Explore Products.<br><span>Choose With Confidence.</span></h1>
+          <p>Semak produk mengikut kategori di sini dahulu. Apabila anda sudah jumpa produk yang sesuai, barulah teruskan ke kedai rasmi getnew.my di Shopee untuk harga dan stok terkini.</p>
+        </div>
+        <div class="catalog-stat-panel">
+          <strong>152</strong><span>Products listed by the Vitacom Shopee store</span>
+          <small>Katalog di bawah memaparkan produk utama yang disahkan daripada paparan kedai. Inventori Shopee boleh berubah dari semasa ke semasa.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section">
+      <div class="container">
+        <div class="catalog-tools" aria-label="Product filters">
+          <label class="catalog-search"><span>Search products</span><input id="productSearch" type="search" placeholder="Contoh: printer, ink, keyboard…" autocomplete="off" /></label>
+          <div class="filter-row" id="categoryFilters">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="printing">Printers</button>
+            <button class="filter-btn" data-filter="ink">Ink & Printer Parts</button>
+            <button class="filter-btn" data-filter="computing">Computers & Accessories</button>
+            <button class="filter-btn" data-filter="connectivity">Connectivity</button>
+          </div>
+        </div>
+
+        <div class="catalog-result-line"><span id="productCount">11 products shown</span><b>Vitacom / getnew.my</b></div>
+        <div class="catalog-grid" id="catalogGrid">
+          <article class="catalog-card" data-category="printing" data-name="canon pixma e410 e470 wireless printer">
+            <div class="catalog-image store-crop crop-1" role="img" aria-label="Canon Pixma E410 E470 product listing from Vitacom Shopee"></div>
+            <div class="catalog-card-copy"><span>Printers</span><h2>Canon Pixma E410 / E470 Wireless All-in-One Printer</h2><p>Print, scan and copy with Wi-Fi support. Selected listing includes free photo paper.</p><strong>From RM128.90*</strong><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">View on Shopee ↗</a></div>
+          </article>
+          <article class="catalog-card" data-category="ink" data-name="universal premium refill ink black cyan magenta yellow">
+            <div class="catalog-image store-crop crop-2" role="img" aria-label="Universal premium refill ink product listing from Vitacom Shopee"></div>
+            <div class="catalog-card-copy"><span>Ink</span><h2>Universal Premium Refill Ink 100ML</h2><p>Single-colour refill ink options for Epson, Canon, HP and Brother printers.</p><strong>From RM4.50*</strong><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">View on Shopee ↗</a></div>
+          </article>
+          <article class="catalog-card" data-category="ink" data-name="4 colours ciss ink tank kit continuous ink system">
+            <div class="catalog-image store-crop crop-3" role="img" aria-label="Four-colour CISS ink tank kit product listing from Vitacom Shopee"></div>
+            <div class="catalog-card-copy"><span>Printer Parts</span><h2>4-Colour CISS Ink Tank Kit</h2><p>Continuous ink tank system for selected Canon and HP printer models.</p><strong>From RM54.50*</strong><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">View on Shopee ↗</a></div>
+          </article>
+          <article class="catalog-card" data-category="computing" data-name="usb quality controller joystick gamepad pc laptop">
+            <div class="catalog-image store-crop crop-4" role="img" aria-label="USB gamepad controller product listing from Vitacom Shopee"></div>
+            <div class="catalog-card-copy"><span>Computer Accessories</span><h2>USB Wired Gamepad Controller</h2><p>Single or double controller options with vibration support for PC and laptop.</p><strong>From RM15.90*</strong><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">View on Shopee ↗</a></div>
+          </article>
+          <article class="catalog-card" data-category="printing" data-name="canon pixma g2010 refill ink tank printer">
+            <div class="catalog-image store-crop crop-5" role="img" aria-label="Canon Pixma G2010 product listing from Vitacom Shopee"></div>
+            <div class="catalog-card-copy"><span>Printers</span><h2>Canon Pixma G2010 Refill Ink Tank Printer</h2><p>All-in-one print, scan and copy printer with refillable ink tanks.</p><strong>From RM340.00*</strong><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">View on Shopee ↗</a></div>
+          </article>
+          <article class="catalog-card" data-category="computing" data-name="cdr dvdr blank disc recordable 700mb 4.7gb">
+            <div class="catalog-image store-crop crop-6" role="img" aria-label="Blank CD-R and DVD-R product listing from Vitacom Shopee"></div>
+            <div class="catalog-card-copy"><span>Storage Media</span><h2>CD-R / DVD-R Blank Disc</h2><p>Recordable blank discs in 700MB and 4.7GB variants.</p><strong>From RM7.49*</strong><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">View on Shopee ↗</a></div>
+          </article>
+          <article class="catalog-card" data-category="ink" data-name="epson l3110 l3210 l3150 l3250 l5190 l5290 waste ink pad maintenance box">
+            <div class="catalog-image"><img src="assets/product-printer.jpg" alt="Printer maintenance and waste ink pad support" loading="lazy"></div>
+            <div class="catalog-card-copy"><span>Printer Parts</span><h2>Epson Waste Ink Pad / Maintenance Box</h2><p>Replacement ink pad sponge for selected Epson EcoTank models.</p><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">Check current listing ↗</a></div>
+          </article>
+          <article class="catalog-card" data-category="computing" data-name="arabic full size keyboard numeric pad usb desktop laptop smartphone">
+            <div class="catalog-image"><img src="assets/product-computer.jpg" alt="Computer keyboard and desktop accessories" loading="lazy"></div>
+            <div class="catalog-card-copy"><span>Computer Accessories</span><h2>Arabic Full-Size USB Keyboard</h2><p>Full-size keyboard with numeric keypad for desktop, laptop and supported smartphones.</p><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">Check current listing ↗</a></div>
+          </article>
+          <article class="catalog-card" data-category="printing" data-name="canon e410 e470 wifi ciss refill ink printer smartphone pc">
+            <div class="catalog-image"><img src="assets/product-printer.jpg" alt="Canon printer with refill ink system" loading="lazy"></div>
+            <div class="catalog-card-copy"><span>Printers</span><h2>Canon E410 / E470 Wi-Fi With CISS Tank</h2><p>Upgraded refill-ink configuration with printing from compatible smartphones or PCs.</p><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">Check current listing ↗</a></div>
+          </article>
+          <article class="catalog-card" data-category="printing" data-name="epson ecotank l3210 l3250 l3310 l3350 printer scan copy wifi">
+            <div class="catalog-image"><img src="assets/product-printer.jpg" alt="Epson EcoTank multifunction printer" loading="lazy"></div>
+            <div class="catalog-card-copy"><span>Printers</span><h2>Epson EcoTank Multifunction Series</h2><p>Selected L-series printers with print, scan, copy, Wi-Fi and refillable ink options.</p><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">Check current listing ↗</a></div>
+          </article>
+          <article class="catalog-card" data-category="connectivity" data-name="lan cable network switch router connectivity accessories">
+            <div class="catalog-image"><img src="assets/product-network.jpg" alt="LAN cables and networking accessories" loading="lazy"></div>
+            <div class="catalog-card-copy"><span>Connectivity</span><h2>LAN Cables & Networking Accessories</h2><p>Cables, switches and connectivity essentials for home and small-business networks.</p><a href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">Check current listing ↗</a></div>
+          </article>
+        </div>
+
+        <div class="catalog-empty" id="catalogEmpty" hidden><strong>No matching products.</strong><span>Try another search word or choose All Products.</span></div>
+        <div class="catalog-shop-note"><div><span>Need the latest stock?</span><h2>Continue to the official Vitacom Shopee store.</h2><p>*Prices shown were visible during the latest catalogue check and may change. Shopee remains the final source for current variants, stock and checkout.</p></div><a class="btn btn-primary" href="https://shopee.com.my/getnew.my" target="_blank" rel="noopener">Open getnew.my on Shopee ↗</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer compact-footer"><div class="container footer-statement"><div class="footer-mark"><img src="assets/vitacom-logo.png" alt=""><strong>VITACOM ENTERPRISE</strong></div><p>Computers, printers, accessories, ink, cables, networking equipment and dependable IT services in Melaka.</p></div><div class="container footer-bottom"><span>© 2026 VITACOM ENTERPRISE · MERLIMAU, MELAKA</span></div></footer>
+  <button class="floating-whatsapp" aria-label="WhatsApp Vitacom" onclick="window.open('https://api.whatsapp.com/send?phone=%2B60125208554','_blank')"><span>WA</span><i>Chat with us</i></button>
+  <script src="script.js"></script>
+  <script src="catalog.js"></script>
+</body>
+</html>
