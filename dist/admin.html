@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><title>Vitacom Studio | Admin</title>
+  <link rel="icon" href="assets/vitacom-logo.png"><link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <section id="loginScreen" class="login-screen">
+    <div class="login-brand"><img src="assets/vitacom-logo.png" alt="Vitacom"><span>VITACOM <b>STUDIO</b></span></div>
+    <form id="loginForm" class="login-card">
+      <span class="eyebrow">YOUR WEBSITE, YOUR WAY</span>
+      <h1 id="loginTitle">Selamat datang.</h1><p id="loginDescription">Urus website Vitacom dari satu tempat.</p>
+      <label>Kata laluan<input id="password" type="password" autocomplete="current-password" minlength="10" maxlength="200" required placeholder="Sekurang-kurangnya 10 aksara"></label>
+      <label id="confirmPasswordLabel" hidden>Ulang kata laluan<input id="confirmPassword" type="password" autocomplete="new-password" minlength="10" maxlength="200"></label>
+      <button class="primary" id="loginButton">Log masuk <span>→</span></button><p id="loginError" role="alert"></p>
+      <small>Admin lokal · Belum disambungkan ke hosting online.</small>
+    </form>
+    <p class="login-note">Teks. Gambar. Reka bentuk.<br><strong>Semuanya dalam kawalan anda.</strong></p>
+  </section>
+
+  <div id="studio" hidden>
+    <aside class="sidebar">
+      <a href="index.html" target="_blank" class="studio-brand"><img src="assets/vitacom-logo.png" alt=""><span>VITACOM <b>STUDIO</b></span></a>
+      <span class="nav-caption">RUANG KERJA</span>
+      <nav class="admin-nav" aria-label="Menu admin">
+        <button data-view="dashboard"><span>⌂</span> Dashboard</button>
+        <button data-view="editor" class="active"><span>▦</span> Editor website</button>
+        <button data-view="theme"><span>◐</span> Reka bentuk</button>
+        <button data-view="media"><span>▧</span> Pustaka gambar</button>
+        <button data-view="history"><span>↶</span> Sejarah versi</button>
+        <button data-view="backup"><span>⇩</span> Sandaran</button>
+        <button data-view="settings"><span>⚙</span> Tetapan website</button>
+        <button data-view="activity"><span>≡</span> Rekod aktiviti</button>
+        <button data-view="health"><span>♡</span> Site Health</button>
+        <button data-view="account"><span>◎</span> Akaun & keselamatan</button>
+      </nav>
+      <div class="sidebar-bottom"><span class="local-badge"><i></i> MOD LOKAL</span><p>Perubahan disimpan ke projek ini. Tiada deployment automatik.</p><button id="logout" class="quiet">Log keluar ↗</button></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><div><span class="eyebrow">VITACOM ENTERPRISE</span><h1 id="viewTitle">Editor website</h1></div><div class="top-actions"><button id="adminSearchButton" class="secondary" title="Carian pantas">Cari ⌘K</button><button id="notificationButton" class="secondary notification-button" title="Notifikasi">♢ <b id="notificationCount">0</b></button><span id="saveStatus" role="status">Semua perubahan disimpan</span><a id="visitWebsite" href="index.html" target="_blank" class="button secondary">Lihat website ↗</a><button id="save" class="primary">Simpan website lokal</button></div></header>
+      <div id="notice" class="notice" role="status" hidden></div>
+      <div id="draftNotice" class="draft-notice" hidden><span>Ada draf yang belum disimpan dari sesi sebelumnya.</span><button id="restoreDraft">Sambung draf</button><button id="discardDraft" class="quiet">Abaikan</button></div>
+
+      <section id="dashboardView" class="view settings-view" hidden>
+        <div class="section-intro"><span class="eyebrow">PUSAT KAWALAN</span><h2 id="welcomeName">Selamat datang.</h2><p>Ringkasan sebenar kandungan dan simpanan website anda.</p></div>
+        <div id="dashboardStats" class="stats-grid"></div>
+        <div class="admin-columns"><div class="settings-card"><h3>Akses pantas</h3><div class="quick-actions"><button data-view="editor" class="primary">Edit website</button><button data-view="media" class="secondary">Urus gambar</button><button data-view="backup" class="secondary">Sandarkan kandungan</button></div><p>Tip: tekan Ctrl + S / ⌘ + S untuk menyimpan draf website dari mana-mana menu.</p><p id="dashboardSaved"></p></div><div class="settings-card"><h3>Halaman website</h3><div id="dashboardPages"></div></div></div>
+        <div class="settings-card"><h3>Aktiviti terkini</h3><div id="dashboardActivity"></div></div>
+      </section>
+      <section id="settingsView" class="view settings-view" hidden>
+        <div class="section-intro"><span class="eyebrow">TETAPAN GLOBAL</span><h2>Pengumuman website.</h2><p>Paparkan promosi atau makluman pada semua halaman. Semak dalam pratonton, kemudian tekan Simpan website lokal.</p></div>
+        <div class="settings-card"><label class="check-label"><input id="announcementEnabled" type="checkbox">Aktifkan bar pengumuman</label><label>Mesej pengumuman<textarea id="announcement" maxlength="500" placeholder="Contoh: Hubungi kami untuk pertanyaan stok terkini."></textarea></label><div class="form-row"><label>Label pautan (pilihan)<input id="announcementLabel" maxlength="500" placeholder="Hubungi kami"></label><label>Pautan (pilihan)<input id="announcementLink" type="text" placeholder="https://… atau mailto:…"></label></div><button data-view="editor" class="secondary">Semak pratonton</button></div>
+      </section>
+      <section id="activityView" class="view settings-view" hidden><div class="section-intro"><span class="eyebrow">REKOD PENGURUSAN</span><h2>Jejak perubahan anda.</h2><p>200 aktiviti terkini: simpanan, muat naik, log masuk dan perubahan akaun. Masa mengikut komputer server.</p></div><div class="filter-bar"><label>Cari aktiviti<input id="activitySearch" type="search" placeholder="Cari aktiviti, versi atau tarikh…"></label><button id="refreshActivity" class="secondary">Muat semula</button></div><div id="activityList" class="settings-card"></div></section>
+      <section id="healthView" class="view settings-view" hidden><div class="section-intro health-intro"><div><span class="eyebrow">PEMERIKSAAN WEBSITE</span><h2>Kesihatan website.</h2><p>Semak halaman, SEO, gambar, pautan dalaman, storan dan keadaan server.</p></div><button id="runHealth" class="primary">Jalankan semakan semula</button></div><div id="healthSummary" class="stats-grid"></div><div class="admin-columns"><div class="settings-card"><h3>Isu yang dijumpai</h3><div id="healthIssues"></div></div><div class="settings-card"><h3>Maklumat sistem</h3><div id="systemInfo"></div></div></div><div class="settings-card"><h3>Ringkasan halaman</h3><div id="healthPages"></div></div></section>
+      <section id="accountView" class="view settings-view" hidden>
+        <div class="section-intro"><span class="eyebrow">AKAUN ADMIN</span><h2>Akaun & keselamatan.</h2><p>Perubahan akaun disimpan terus, berasingan daripada draf website.</p></div>
+        <div class="admin-columns"><form id="profileForm" class="settings-card"><h3>Profil admin</h3><label>Nama paparan<input id="profileName" required maxlength="80" autocomplete="nickname"></label><button class="primary">Simpan profil</button></form>
+        <form id="passwordForm" class="settings-card"><h3>Tukar kata laluan</h3><label>Kata laluan semasa<input id="currentPassword" type="password" required maxlength="200" autocomplete="current-password"></label><label>Kata laluan baharu<input id="newPassword" type="password" required minlength="10" maxlength="200" autocomplete="new-password"></label><label>Ulang kata laluan baharu<input id="repeatPassword" type="password" required minlength="10" maxlength="200" autocomplete="new-password"></label><p>Minimum 10 aksara. Semua sesi lama akan ditamatkan selepas pertukaran.</p><button class="primary">Kemas kini kata laluan</button></form></div>
+        <div class="settings-card"><h3>Sesi log masuk</h3><p id="sessionInfo"></p><p id="passwordInfo"></p><button id="revokeSessions" class="secondary">Log keluar semua sesi lain</button><p>Sesi ini kekal aktif. Akses online dari peranti lain belum diaktifkan.</p></div>
+      </section>
+      <section id="editorView" class="view">
+        <div class="editor-toolbar"><div class="page-switch"><label for="pageSelect">HALAMAN</label><select id="pageSelect"><option value="index">Laman utama</option><option value="products">Products</option><option value="services">Service & Troubleshooting</option></select></div><div class="toolbar-actions"><button id="undo" class="icon-button" title="Undo" aria-label="Undo">↶</button><button id="redo" class="icon-button" title="Redo" aria-label="Redo">↷</button><span class="divider"></span><button id="desktop" class="device active">Desktop</button><button id="mobile" class="device">Telefon</button></div></div>
+        <div class="editor-grid">
+          <aside class="section-panel"><div class="panel-heading"><h2>Struktur halaman</h2><span id="sectionCount"></span></div><div id="sectionList"></div><button id="addSection" class="add-section">＋ Tambah seksyen</button><button id="pageSettings" class="quiet page-settings">Tetapan halaman / SEO</button></aside>
+          <div class="preview-area"><div class="preview-label"><span><i></i> PRATONTON LANGSUNG</span><small>Klik teks atau gambar untuk edit</small></div><div id="frameShell" class="frame-shell"><iframe id="preview" title="Pratonton website yang boleh diedit" src="about:blank"></iframe></div><p class="preview-hint">Perubahan dalam pratonton ialah draf sehingga anda tekan Simpan.</p></div>
+          <aside class="inspector"><div class="panel-heading"><h2>Panel edit</h2><span>✎</span></div><div id="inspectorContent"></div><div class="field-browser"><label for="fieldSearch">Cari kandungan</label><input id="fieldSearch" type="search" placeholder="Cari teks, gambar atau pautan…"><div class="field-tabs"><button data-kind="all" class="active">Semua</button><button data-kind="text">Teks</button><button data-kind="image">Gambar</button><button data-kind="link">Pautan</button></div><div id="fieldList"></div></div></aside>
+        </div>
+      </section>
+
+      <section id="themeView" class="view settings-view" hidden><div class="section-intro"><span class="eyebrow">MAKE IT YOURS</span><h2>Identiti website anda.</h2><p>Ubah warna utama dan font teks untuk ketiga-tiga halaman.</p></div><div class="settings-card"><label>Warna utama<input type="color" id="themeAccent" value="#ed161b"></label><label>Font teks<select id="themeFont"><option>Inter</option><option>Arial</option><option>Georgia</option></select></label><p>Font tajuk berjenama dikekalkan. Saiz dan warna teks tertentu boleh diubah melalui panel editor.</p><button id="resetTheme" class="secondary">Pulihkan tema asal</button></div></section>
+      <section id="mediaView" class="view settings-view" hidden><div class="section-intro media-heading"><div><span class="eyebrow">YOUR VISUAL LIBRARY</span><h2>Semua gambar, satu tempat.</h2><p>Muat naik JPG, PNG, WebP atau GIF. Maksimum 5 MB setiap gambar.</p></div><button id="uploadLibrary" class="primary">＋ Muat naik gambar</button></div><div id="mediaGrid" class="media-grid"></div></section>
+      <section id="historyView" class="view settings-view" hidden><div class="section-intro"><span class="eyebrow">ROOM TO EXPERIMENT</span><h2>Anda boleh kembali semula.</h2><p>20 versi terdahulu disimpan. Pulihkan sebagai draf, semak, kemudian simpan.</p></div><div id="historyList"></div></section>
+      <section id="backupView" class="view settings-view" hidden><div class="section-intro"><span class="eyebrow">KEEP A COPY</span><h2>Sandaran kandungan.</h2><p>Simpan atau import fail kandungan tanpa menyunting kod.</p></div><div class="settings-card"><h3>Eksport draf semasa</h3><p>Fail JSON mengandungi teks, susunan, pautan dan tema. Gambar kekal dalam folder assets; salin seluruh folder projek untuk sandaran lengkap.</p><button id="export" class="primary">Muat turun sandaran</button><hr><h3>Import sandaran</h3><p>Import masuk sebagai draf untuk disemak sebelum disimpan.</p><label class="button secondary">Pilih fail JSON<input id="import" type="file" accept="application/json,.json" hidden></label></div></section>
+    </div>
+  </div>
+  <dialog id="mediaDialog"><div class="dialog-heading"><div><span class="eyebrow">PUSTAKA GAMBAR</span><h2>Pilih gambar</h2></div><button id="closeMedia" class="icon-button" aria-label="Tutup pustaka">×</button></div><button id="uploadPicker" class="primary">＋ Muat naik gambar baharu</button><div id="pickerGrid" class="media-grid"></div></dialog>
+  <dialog id="adminSearchDialog" class="command-dialog"><div class="dialog-heading"><div><span class="eyebrow">CARIAN PANTAS</span><h2>Pergi ke mana-mana alat.</h2></div><button id="closeAdminSearch" class="icon-button" aria-label="Tutup carian">×</button></div><label for="adminSearch">Cari menu atau tindakan</label><input id="adminSearch" type="search" placeholder="Contoh: gambar, SEO, sandaran…" autocomplete="off"><div id="adminSearchResults" class="command-results"></div><small>Tip: tekan Ctrl+K atau Command+K dari mana-mana halaman admin.</small></dialog>
+  <dialog id="notificationDialog" class="command-dialog"><div class="dialog-heading"><div><span class="eyebrow">PUSAT NOTIFIKASI</span><h2>Perkara yang perlu diketahui.</h2></div><button id="closeNotifications" class="icon-button" aria-label="Tutup notifikasi">×</button></div><div id="notificationList"></div></dialog>
+  <input type="file" id="imageUpload" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+  <script src="admin.js"></script>
+</body>
+</html>
