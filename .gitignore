@@ -1,3 +1,5 @@
 .vitacom-admin/
 __pycache__/
 *.pyc
+
+.vercel
