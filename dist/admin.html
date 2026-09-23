@@ -15,7 +15,7 @@
       <label>Kata laluan<input id="password" type="password" autocomplete="current-password" minlength="10" maxlength="200" required placeholder="Kata laluan admin"></label>
       <label id="confirmPasswordLabel" hidden>Ulang kata laluan<input id="confirmPassword" type="password" autocomplete="new-password" minlength="10" maxlength="200"></label>
       <button class="primary" id="loginButton">Log masuk <span>→</span></button><p id="loginError" role="alert"></p>
-      <small>Admin lokal · Belum disambungkan ke hosting online.</small>
+      <small>Admin online · Data disimpan dalam Supabase.</small>
     </form>
     <p class="login-note">Teks. Gambar. Reka bentuk.<br><strong>Semuanya dalam kawalan anda.</strong></p>
   </section>
@@ -36,7 +36,7 @@
         <button data-view="health"><span>♡</span> Site Health</button>
         <button data-view="account"><span>◎</span> Akaun & keselamatan</button>
       </nav>
-      <div class="sidebar-bottom"><span class="local-badge"><i></i> MOD LOKAL</span><p>Perubahan disimpan ke projek ini. Tiada deployment automatik.</p><button id="logout" class="quiet">Log keluar ↗</button></div>
+      <div class="sidebar-bottom"><span class="local-badge"><i></i> MOD ONLINE</span><p>Perubahan disimpan terus dalam Supabase.</p><button id="logout" class="quiet">Log keluar ↗</button></div>
     </aside>
     <div class="workspace">
       <header class="topbar"><div><span class="eyebrow">VITACOM ENTERPRISE</span><h1 id="viewTitle">Editor website</h1></div><div class="top-actions"><button id="adminSearchButton" class="secondary" title="Carian pantas">Cari ⌘K</button><button id="notificationButton" class="secondary notification-button" title="Notifikasi">♢ <b id="notificationCount">0</b></button><span id="saveStatus" role="status">Semua perubahan disimpan</span><a id="visitWebsite" href="index.html" target="_blank" class="button secondary">Lihat website ↗</a><button id="save" class="primary">Simpan website lokal</button></div></header>
@@ -80,6 +80,6 @@
   <dialog id="adminSearchDialog" class="command-dialog"><div class="dialog-heading"><div><span class="eyebrow">CARIAN PANTAS</span><h2>Pergi ke mana-mana alat.</h2></div><button id="closeAdminSearch" class="icon-button" aria-label="Tutup carian">×</button></div><label for="adminSearch">Cari menu atau tindakan</label><input id="adminSearch" type="search" placeholder="Contoh: gambar, SEO, sandaran…" autocomplete="off"><div id="adminSearchResults" class="command-results"></div><small>Tip: tekan Ctrl+K atau Command+K dari mana-mana halaman admin.</small></dialog>
   <dialog id="notificationDialog" class="command-dialog"><div class="dialog-heading"><div><span class="eyebrow">PUSAT NOTIFIKASI</span><h2>Perkara yang perlu diketahui.</h2></div><button id="closeNotifications" class="icon-button" aria-label="Tutup notifikasi">×</button></div><div id="notificationList"></div></dialog>
   <input type="file" id="imageUpload" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
-  <script src="admin.js"></script>
+  <script src="supabase-config.js"></script><script src="supabase-client.js"></script><script src="admin.js"></script>
 </body>
 </html>
