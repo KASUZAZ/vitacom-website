@@ -198,6 +198,8 @@ class Handler(SimpleHTTPRequestHandler):
                     ATTEMPTS[:] = [t for t in ATTEMPTS if now-t < 300]
                     if len(ATTEMPTS) >= 10: return self.json(429, {'error': 'Terlalu banyak percubaan. Cuba lagi dalam 5 minit.'})
                     ATTEMPTS.append(now)
+                    username = body.get('username', 'admin')
+                    if username != 'admin': return self.json(401, {'error': 'Username admin tidak betul.'})
                     password = body.get('password', '')
                     if not isinstance(password, str) or not 10 <= len(password) <= 200: raise ValueError('Kata laluan mesti 10–200 aksara.')
                     auth = read(PRIVATE / 'auth.json')
@@ -205,11 +207,11 @@ class Handler(SimpleHTTPRequestHandler):
                         if auth: return self.json(409, {'error': 'Akaun sudah wujud. Sila log masuk.'})
                         salt = secrets.token_hex(16)
                         digest = hashlib.pbkdf2_hmac('sha256', password.encode(), bytes.fromhex(salt), 600000).hex()
-                        write(PRIVATE / 'auth.json', {'salt': salt, 'hash': digest})
+                        write(PRIVATE / 'auth.json', {'username': 'admin', 'salt': salt, 'hash': digest})
                     else:
                         if not auth: return self.json(400, {'error': 'Sediakan akaun dahulu.'})
                         digest = hashlib.pbkdf2_hmac('sha256', password.encode(), bytes.fromhex(auth['salt']), 600000).hex()
-                        if not hmac.compare_digest(auth['hash'], digest): return self.json(401, {'error': 'Kata laluan tidak betul.'})
+                        if auth.get('username', 'admin') != username or not hmac.compare_digest(auth['hash'], digest): return self.json(401, {'error': 'Username atau kata laluan tidak betul.'})
                     ATTEMPTS.clear()
                     token = secrets.token_urlsafe(32)
                     SESSIONS[token] = now + 8*3600
@@ -242,7 +244,7 @@ class Handler(SimpleHTTPRequestHandler):
                     if not hmac.compare_digest(auth['hash'], digest): return self.json(400, {'error': 'Kata laluan semasa tidak betul.'})
                     if old == new: raise ValueError('Gunakan kata laluan yang berbeza.')
                     salt = secrets.token_hex(16)
-                    write(PRIVATE / 'auth.json', {'salt': salt, 'hash': hashlib.pbkdf2_hmac('sha256', new.encode(), bytes.fromhex(salt), 600000).hex()})
+                    write(PRIVATE / 'auth.json', {'username': 'admin', 'salt': salt, 'hash': hashlib.pbkdf2_hmac('sha256', new.encode(), bytes.fromhex(salt), 600000).hex()})
                     profile = read(PRIVATE / 'profile.json', {})
                     profile['passwordChangedAt'] = time.strftime('%Y-%m-%d %H:%M:%S')
                     write(PRIVATE / 'profile.json', profile)

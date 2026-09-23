@@ -24,7 +24,7 @@
   async function api(path, body) {
     let response;
     try {response=await fetch(`/api/${path}`,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined,cache:'no-store'});}
-    catch {throw new Error('Tidak dapat hubungi server. Pastikan admin-server.py sedang berjalan.');}
+    catch {throw new Error('Admin perlu dibuka melalui http://127.0.0.1:8766/admin.html dan admin-server.py mesti sedang berjalan.');}
     let data;
     try {data=await response.json();} catch {throw new Error('Buka admin melalui server admin, bukan Live Server atau fail HTML terus.');}
     if(!response.ok) {
@@ -184,7 +184,7 @@
     for(const name of ['index','products','services']) state.pages[name] ||= {};
     saved=clone(state);undo=[];redo=[];
     $('loginScreen').hidden=true;$('studio').hidden=false;
-    $('password').value='';$('confirmPassword').value='';
+    $('username').value='admin';$('password').value='';$('confirmPassword').value='';
     try {pendingDraft=!!localStorage.getItem(draftKey);$('draftNotice').hidden=!pendingDraft;}catch{}
     await loadMedia();loadPage(page);sync();await refreshNotifications();await showView('dashboard');
   }
@@ -197,7 +197,7 @@
     event.preventDefault();$('loginError').textContent='';$('loginButton').disabled=true;
     try {
       if(session.setup && $('password').value!==$('confirmPassword').value) throw new Error('Kata laluan tidak sepadan.');
-      await api(session.setup?'setup':'login',{password:$('password').value});session.setup=false;await start();
+      await api(session.setup?'setup':'login',{username:$('username').value,password:$('password').value});session.setup=false;await start();
     }catch(error){$('loginError').textContent=error.message;}finally{$('loginButton').disabled=false;}
   });
   $('save').addEventListener('click',async()=>{
@@ -337,7 +337,7 @@
     try {
       session=await api('session');
       if(session.authenticated) return await start();
-      if(session.setup){$('loginTitle').textContent='Sediakan admin anda.';$('loginDescription').textContent='Cipta kata laluan untuk mengurus website Vitacom.';$('loginButton').textContent='Cipta akaun admin →';$('confirmPasswordLabel').hidden=false;$('confirmPassword').required=true;$('password').autocomplete='new-password';}
-    }catch(error){$('loginError').textContent=error.message;}
+      if(session.setup){$('loginTitle').textContent='Sediakan admin anda.';$('loginDescription').textContent='Username admin anda ialah admin. Cipta kata laluan untuk mengurus website Vitacom.';$('loginButton').textContent='Cipta akaun admin →';$('confirmPasswordLabel').hidden=false;$('confirmPassword').required=true;$('password').autocomplete='new-password';}
+    }catch(error){$('loginError').textContent=error.message;$('loginButton').disabled=true;}
   })();
 })();
