@@ -120,5 +120,9 @@
       }
     });
     announce();
-  } else fetch('content.json',{cache:'no-store'}).then(r=>r.ok?r.json():{}).then(apply).catch(()=>{});
+  } else {
+    const online=window.VITACOM_SUPABASE;
+    const load=online ? fetch(`${online.url}/rest/v1/vitacom_content?select=state&id=eq.site`,{headers:{apikey:online.key}}).then(r=>r.ok?r.json():[]).then(rows=>rows[0]?.state || {}) : fetch('content.json',{cache:'no-store'}).then(r=>r.ok?r.json():{});
+    load.then(apply).catch(()=>fetch('content.json',{cache:'no-store'}).then(r=>r.ok?r.json():{}).then(apply).catch(()=>{}));
+  }
 })();
