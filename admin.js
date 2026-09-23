@@ -22,6 +22,7 @@
     $('notice').textContent=message; $('notice').classList.toggle('error',error); $('notice').hidden=false;
   }
   async function api(path, body) {
+    if (window.vitacomOnlineApi) return window.vitacomOnlineApi(path, body);
     let response;
     try {response=await fetch(`/api/${path}`,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined,cache:'no-store'});}
     catch {throw new Error('Admin perlu dibuka melalui http://127.0.0.1:8766/admin.html dan admin-server.py mesti sedang berjalan.');}
